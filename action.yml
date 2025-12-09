@@ -1,9 +1,5 @@
 name: 'Croissant Metadata Validator'
 description: 'Validate Croissant metadata files using mlcroissant'
-author: 'Scientific Software Center'
-branding:
-  icon: 'check-circle'
-  color: 'green'
 
 inputs:
   file:
@@ -21,7 +17,6 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ inputs.python-version }}
-      shell: bash
 
     - name: Install mlcroissant
       run: pip install --upgrade mlcroissant

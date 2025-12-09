@@ -2,9 +2,9 @@ name: Example to Validate Croissant Metadata
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, master ]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate Croissant metadata
-        uses: iulusoy/verify-croissant-schema
+        uses: iulusoy/verify-croissant-schema@main
         with:
           file: 'croissant.json'  # Change this to your metadata file path
           python-version: '3.10'
