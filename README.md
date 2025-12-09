@@ -1,6 +1,6 @@
 # Croissant Metadata Validator
 
-[![GitHub Actions](https://github.com/iulusoy/verify-croissant-schema/workflows/Test%20Error%20Handling/badge.svg)](https://github.com/iulusoy/verify-croissant-schema/actions)
+[![GitHub Actions](https://github.com/iulusoy/validate-croissant-schema/workflows/Test%20Error%20Handling/badge.svg)](https://github.com/iulusoy/validate-croissant-schema/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
 
@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: iulusoy/verify-croissant-schema
+      - uses: iulusoy/validate-croissant-schema
         with:
           file: 'path/to/metadata.json'
 ```
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: iulusoy/verify-croissant-schema
+      - uses: iulusoy/validate-croissant-schema
         with:
           file: 'croissant.json'
           python-version: '3.11'
@@ -48,7 +48,7 @@ jobs:
 You can use this action from the GitHub Marketplace:
 
 ```yaml
-- uses: iulusoy/verify-croissant-schema@v1
+- uses: iulusoy/validate-croissant-schema@v1
   with:
     file: 'path/to/metadata.json'
 ```
@@ -91,7 +91,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate Croissant metadata
-        uses: iulusoy/verify-croissant-schema
+        uses: iulusoy/validate-croissant-schema
         with:
           file: 'metadata/croissant.json'
           python-version: '3.10'
