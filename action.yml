@@ -1,0 +1,44 @@
+name: 'Croissant Metadata Validator'
+description: 'Validate Croissant metadata files using mlcroissant'
+author: 'Scientific Software Center'
+branding:
+  icon: 'check-circle'
+  color: 'green'
+
+inputs:
+  file:
+    description: 'Path to the Croissant metadata file to validate'
+    required: true
+  python-version:
+    description: 'Python version to use'
+    required: false
+    default: '3.13'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python ${{ inputs.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+      shell: bash
+
+    - name: Install mlcroissant
+      run: pip install --upgrade mlcroissant
+      shell: bash
+
+    - name: Validate Croissant metadata
+      run: |
+        if [ ! -f "${{ inputs.file }}" ]; then
+          echo "::error::File ${{ inputs.file }} not found"
+          exit 1
+        fi
+        
+        echo "Validating Croissant metadata file: ${{ inputs.file }}"
+        if command -v mlcroissant >/dev/null 2>&1; then
+          mlcroissant validate --jsonld "${{ inputs.file }}"
+        else
+          python -m mlcroissant validate --jsonld "${{ inputs.file }}"
+        fi
+      shell: bash
+
