@@ -1,5 +1,9 @@
 # Croissant Metadata Validator
 
+[![GitHub Actions](https://github.com/iulusoy/verify-croissant-schema/workflows/Test%20Error%20Handling/badge.svg)](https://github.com/iulusoy/verify-croissant-schema/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/downloads/)
+
 A GitHub Action to validate Croissant metadata files using the [mlcroissant](https://github.com/mlcommons/croissant) Python package.
 
 ## Usage
@@ -41,7 +45,7 @@ jobs:
 
 ### Using from GitHub Marketplace
 
-Once published, you can use this action from the GitHub Marketplace:
+You can use this action from the GitHub Marketplace:
 
 ```yaml
 - uses: iulusoy/verify-croissant-schema@v1
